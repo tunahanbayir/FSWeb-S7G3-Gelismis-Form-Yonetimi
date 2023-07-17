@@ -18,7 +18,9 @@ function App() {
     <div className="App">
      <Form addNewUser={addNewUser} />
      <hr />
+    
      <pre>{JSON.stringify(users)}</pre>
+     
     </div>
   );
 }

@@ -23,7 +23,8 @@ const Form = ({addNewUser}) => {
 
     const formSchema = Yup.object().shape({
         name: Yup
-        .string(), 
+        .string()
+        .required("İsim alanı boş bırakılamaz."), 
         email: Yup
           .string()
           .email("Geçerli bir eposta adresi değil.")
@@ -81,28 +82,28 @@ const Form = ({addNewUser}) => {
         <p>
         <label>
             Ad Soyad:&nbsp;
-            <input name="name" type="text" onChange={handleInputChange}/>
+            <input id="name" name="name" type="text" onChange={handleInputChange}/>
         </label>
         {formErrors.name && ( <div className="input-error-message">{formErrors.name}</div> )}
         </p>
         <p>
         <label>
             E-posta:&nbsp;
-            <input name="email" type="text" onChange={handleInputChange}/>
+            <input id="email" name="email" type="text" onChange={handleInputChange}/>
         </label>
         {formErrors.email && ( <div className="input-error-message">{formErrors.email}</div>)}
         </p>
         <p>
         <label>
             Şifre:&nbsp;
-            <input name="password" type="password" onChange={handleInputChange}/>
+            <input id="password" name="password" type="password" onChange={handleInputChange}/>
         </label>
         {formErrors.password && ( <div className="input-error-message">{formErrors.password}</div> )}
         </p>
         <p>
         <label>
             Kullanım Şartlarını Kabul Ediyorum.
-            <input name="term" type="checkbox" onChange={handleInputChange}/>
+            <input id="term" name="term" type="checkbox" onChange={handleInputChange}/>
         </label>
         {formErrors.term && ( <div className="input-error-message">{formErrors.term}</div> )}
         </p>
